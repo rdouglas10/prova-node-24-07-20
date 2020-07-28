@@ -18,52 +18,17 @@ const routes = express.Router();
  * @swagger
  * /signup:
  *  post:
- *    tags:
- *    - "signup"
- *    summary: "Endpoint to create a user for auth"
- *    description: "Uses email and password to create"
- *    operationId: "store"
- *    produces:
- *    - "application/json"
- *    parameters:
- *    - name: "username"
- *      in: "query"
- *      description: "The user name for store"
- *      required: true
- *      type: "string"
- *    - name: "password"
- *      in: "query"
- *      description: "The password for store in clear text"
- *      required: true
- *      type: "string"
- *    
+ *    description: create a user
+ *       
  */
-
 routes.post("/signup", passport.authenticate('signup', { session: false }), AuthController.store);
 
 /**
  * @swagger
  * /login:
  *  post:
- *    tags:
- *    - "login"
- *    summary: "Endpoint to logs user into the system"
- *    description: "Uses email and password to access"
- *    operationId: "login"
- *    produces:
- *    - "application/json"
- *    parameters:
- *    - name: "username"
- *      in: "query"
- *      description: "The user name for login"
- *      required: true
- *      type: "string"
- *    - name: "password"
- *      in: "query"
- *      description: "The password for login in clear text"
- *      required: true
- *      type: "string"
- *    
+ *    description: Sign in with email and password
+ *       
  */
 routes.post("/login", AuthController.index);
 
@@ -71,50 +36,7 @@ routes.post("/login", AuthController.index);
  * @swagger
  * /profile:
  *  post:
- *    tags:
- *    - "profile"
- *    summary: "Endpoint access the route only with valid token"
- *    description: "Uses token, email and password to access"
- *    operationId: "login"
- *    consumes:
- *    - "application/json"
- *    produces:
- *    - "application/json"
- *    parameters:
- *    - in: "body"
- *      name: "body"
- *      description: "Test token validation params"
- *      required: true
- *      schema:
- * 		  type: "array"
- *        items:
- *          $ref: "#/definitions/Profile"
- *    responses:
- *      '200':
- *        description: "OK"
- *        content:
- *          text/plain:
- *              schema:
- *              type: "string"
- *      '400':
- *        description: "ERROR"
- *        content:
- *          text/plain:
- *              schema:
- *              type: "string"
- *  definitions:
- *    Profile:
- *      type: "object"
- *      properties:
- *        id:
- *          type: "integer"
- *          format: "int64"
- *        token:
- *          type: "string" 		 
- *        email:
- *          type: "string"
- *        password:
- *          type: "string"
+ *    description: access the route only with valid token
  *       
  */
 routes.get("/profile", passport.authenticate('jwt', { session: false }), ProfileController.index);
@@ -126,7 +48,7 @@ routes.get("/profile", passport.authenticate('jwt', { session: false }), Profile
  *  post:
  *    description: access the route to add a person
  *       
- */
+ */ 
 routes.post("/users", passport.authenticate('jwt', { session: false }), PersonController.addPerson);
 
 
