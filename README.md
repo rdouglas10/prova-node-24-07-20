@@ -1,20 +1,22 @@
-<p align="center">
-  <a href="LICENSE" >
-    <img alt="License" src="https://img.shields.io/badge/license-MIT-%23F8952D">
-  </a>
-</p>
+# Helpper Challenge - Backend NodeJS
 
-## About
+## :page_with_curl: Summary
 
-Starter expressJs APi with JWT
+This project was developed as a prerequisite in the selection process for a backend developer vacancy. The purpose of the project is to provide an API to manage user crud.
 
-## Why
+## :necktie: The Business Roles
 
-I am create this repo for simple starter applications with basic code.
+- Create a small application to manage users.
 
-## Packages
+- The user can add, update, view all contacts and delete.
 
-The project was developed using the following technologies
+- The user cannot be deleted from the database (soft delete).
+
+## :arrow_forward: Environment
+
+You can run the application directly on your computer. Just have Node v12.16.1+ installed, mongodb v4.0.3.
+
+Used libraries:
 
 - [express](https://expressjs.com/)
 - [mongoose](https://mongoosejs.com/)
@@ -26,40 +28,97 @@ The project was developed using the following technologies
 - [nodemon](https://nodemon.io/)
 - [cors](https://www.npmjs.com/package/cors)
 
-## You need add these files in root folder:
+## :fire: Getting Started
 
--jstConfig.js 
+These instructions will get this project up and running in your machine.
+
+### :computer: Using your computer
+
+### :wave: Prerequisites
+
+> [Node](https://nodejs.org/pt-br/download/)
+
+> [Mongodb](https://www.mongodb.com/try/download/community)
+
+
+### :rocket: Installing
+
+ - Clone the project:
+```sh
+$ git clone https://github.com/rdouglas10/prova-node-24-07-20.git 
 ```
-module.exports = {
-    secret: 'my-secret-word',
-}
+  
+- Access the project folder (terminal)
+ ```sh
+$ cd prova-node-24-07-20
 ```
 
--.env 
+- Change the line below in the .env file (project root)
+```sh
+$ MONGO_URI=your_url_from_MongoDB
 ```
-PORT=3000 
-ENV=development
-MONGO_URI=your_url_from_MongoDB
+
+- Install all packages mentioned above
+
+- To execute access the project root run:
+```sh
+$ npm start
+    OU
+$ node app.js    
 ```
-## Starting:
-Make sure you are in the project's root folder
 
-### With Yarn
+- URL Project: http://127.0.0.1:3000/ 
 
-```yarn```
+## :robot: API and Endpoints
 
-``` yarn start```
+The API has the following endpoints:
 
-``` yarn test```
+- `[POST] /signup`: Endpoint to create a um user with password.
+```sh
+Input data:
 
-### With NPM
+$ { "email": "fulano@gmail.com", "password": "123456" }
+ ``` 
 
-```npm install```
+- `[POST] /login`: Endpoint to login e generate the token access.
+```sh
+Input data:
 
-``` npm run start```
+$ { "email": "fulano@gmail.com", "password": "123456" }
+ ``` 
 
-``` npm run test```
+- `[GET] /profile`: Endpoint to test the validation token.
+```sh
+Input data:
 
-## :pencil: Author
+$ { "autentication": "hash token" }
+ ``` 
+ 
+- `[POST] /users`: Endpoint to create a person (action possible only with token generated above). 
+```sh
+Input data:
 
-[<img src="https://avatars2.githubusercontent.com/u/38855507?s=400&u=20c80252e57c06227186be9761e67a20a82d3717&v=4" width=115><br><sub>Carlos Ziegler</sub>](https://github.com/carlosziegler) 
+$ { "name": "Beltrano", "email": "beltrano@gmail.com", "username": "beltrano_"}
+ ```
+ 
+- `[GET] /users`: Endpoint to list all people
+
+- `[GET] /users/:id`: Endpoint to list all people
+
+- `[DELETE] /users/:id`: Endpoint to delete a person (action possible only with token generated above). 
+
+- `[PUT] /users/:id`: Endpoint to update a person (action possible only with token generated above). 
+```sh
+Input data:
+
+$ { "name": "Beltrano", "email": "beltrano@gmail.com", "username": "beltrano_"}
+ ```
+
+## :battery: Future improvements and features
+
+ - [ ] :cold_sweat: Improve documentation.
+ - [ ] Create more tests cases.
+ - [ ] Improve swagger documentation. [Doc Swagger](http://localhost:3000/api-docs)
+ 
+ with more time we do more =)
+
