@@ -1,27 +1,65 @@
-# Prova de Backend
+<p align="center">
+  <a href="LICENSE" >
+    <img alt="License" src="https://img.shields.io/badge/license-MIT-%23F8952D">
+  </a>
+</p>
 
-O projeto inicial é um cadastro de usuários em memória muito simples e sem utilizar nenhuma lib. Apesar de o código estar em qualidade baixa, o projeto está funcional. O que se espera é que o candidato melhore este código de uma maneira que possamos avaliar suas habilidades e competências.
+## About
 
-### Rodando o projeto
+Starter expressJs APi with JWT
 
-`node src/index.js`
+## Why
 
-## O que será avaliado?
+I am create this repo for simple starter applications with basic code.
 
-A idéia é deixar o candidato bem livre pra reimplementar o código da maneira que mais lhe for conveniente e que mais demonstre suas habilidades. Está liberado o uso de libs de terceiros, bancos de dados, autenticação, etc.
+## Packages
 
-1. Qualidade de código
-2. Uso de patterns adequados
-3. Estratégia de validação de dados
-4. Testes unitários
+The project was developed using the following technologies
 
-## O que é desejado (não obrigatório) na entrega?
+- [express](https://expressjs.com/)
+- [mongoose](https://mongoosejs.com/)
+- [passportjs](https://www.passportjs.org/)
+- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+- [swagger](https://swagger.io/)
+- [jest](https://jestjs.io/)
+- [supertest](https://www.npmjs.com/package/supertest)
+- [nodemon](https://nodemon.io/)
+- [cors](https://www.npmjs.com/package/cors)
 
-1. Adição de Banco de dados
-2. Utilização de docker
-3. Autenticação
-4. Utilização de typescript
+## You need add these files in root folder:
 
-## Como será feita a entrega?
+-jstConfig.js 
+```
+module.exports = {
+    secret: 'my-secret-word',
+}
+```
 
-Deverá ser realizado um fork deste repositório e no formulário enviado você deverá responder com o link deste fork.
+-.env 
+```
+PORT=3000 
+ENV=development
+MONGO_URI=your_url_from_MongoDB
+```
+## Starting:
+Make sure you are in the project's root folder
+
+### With Yarn
+
+```yarn```
+
+``` yarn start```
+
+``` yarn test```
+
+### With NPM
+
+```npm install```
+
+``` npm run start```
+
+``` npm run test```
+
+## :pencil: Author
+
+[<img src="https://avatars2.githubusercontent.com/u/38855507?s=400&u=20c80252e57c06227186be9761e67a20a82d3717&v=4" width=115><br><sub>Carlos Ziegler</sub>](https://github.com/carlosziegler) 
