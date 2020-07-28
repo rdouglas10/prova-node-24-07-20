@@ -59,6 +59,9 @@ $ MONGO_URI=your_url_from_MongoDB
 ```
 
 - Install all packages mentioned above
+```sh
+$ npm install    
+```
 
 - To execute access the project root run:
 ```sh
